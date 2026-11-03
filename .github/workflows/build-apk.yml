@@ -1,8 +1,9 @@
+
 name: Build FitCoach APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -11,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
@@ -27,12 +29,12 @@ jobs:
           gradle-version: "8.7"
 
       - name: Installer le SDK Android
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Installer les composants Android requis
-        run: sdkmanager "platforms;android-35"
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
-      - name: Compiler l'APK
+      - name: Compiler l'APK FitCoach
         run: gradle --no-daemon assembleDebug
 
       - name: Déposer l'APK comme artefact téléchargeable
