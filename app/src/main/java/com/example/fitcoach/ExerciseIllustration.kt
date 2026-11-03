@@ -7,7 +7,10 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 
-class ExerciseIllustration(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
+class ExerciseIllustration @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null
+) : View(context, attrs) {
     private val p = Paint(Paint.ANTI_ALIAS_FLAG)
     private var exerciseIndex = 0
     private var isStretch = false
