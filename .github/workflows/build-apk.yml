@@ -1,0 +1,55 @@
+name: Build FitCoach APK
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Installer Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Installer le SDK Android
+        uses: android-actions/setup-android@v3
+
+      - name: Installer les composants Android requis
+        run: sdkmanager "platforms;android-35"
+
+      - name: Compiler l'APK
+        run: gradle --no-daemon assembleDebug
+
+      - name: Déposer l'APK comme artefact téléchargeable
+        uses: actions/upload-artifact@v4
+        with:
+          name: FitCoach-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publier l'APK dans une Release GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: fitcoach-v${{ github.run_number }}
+          name: FitCoach APK - build ${{ github.run_number }}
+          body: |
+            APK Android de FitCoach compilé automatiquement.
+            Télécharge app-debug.apk sur ton téléphone Android.
+          files: app/build/outputs/apk/debug/app-debug.apk
+          fail_on_unmatched_files: true
