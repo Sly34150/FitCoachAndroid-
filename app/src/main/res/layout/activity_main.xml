@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F3F7F5">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <TextView android:text="FITCOACH" android:textStyle="bold" android:textSize="13sp" android:textColor="#16806B" android:letterSpacing="0.12" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:text="Ton entraînement,\nà ton rythme." android:textSize="30sp" android:textStyle="bold" android:textColor="#12302D" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:text="Programme débutant • Maison & salle" android:textSize="15sp" android:textColor="#60736F" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:text="Jours par semaine" android:textStyle="bold" android:textSize="16sp" android:textColor="#173A35" android:layout_marginTop="24dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Spinner android:id="@+id/daysSpinner" android:layout_width="match_parent" android:layout_height="48dp" android:background="#FFFFFF" android:layout_marginTop="6dp" />
+        <TextView android:text="Durée de la séance" android:textStyle="bold" android:textSize="16sp" android:textColor="#173A35" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Spinner android:id="@+id/durationSpinner" android:layout_width="match_parent" android:layout_height="48dp" android:background="#FFFFFF" android:layout_marginTop="6dp" />
+        <TextView android:text="Lieu d'entraînement" android:textStyle="bold" android:textSize="16sp" android:textColor="#173A35" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Spinner android:id="@+id/locationSpinner" android:layout_width="match_parent" android:layout_height="48dp" android:background="#FFFFFF" android:layout_marginTop="6dp" />
+        <Button android:id="@+id/generateButton" android:text="Créer mon programme" android:textAllCaps="false" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="20dp" android:backgroundTint="#137D69" />
+        <TextView android:id="@+id/planText" android:text="Ton planning apparaîtra ici." android:textSize="15sp" android:textColor="#24433E" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#D8E5E0" android:layout_marginTop="20dp" />
+        <TextView android:text="Séance guidée" android:textStyle="bold" android:textSize="22sp" android:textColor="#12302D" android:layout_marginTop="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/exerciseTitle" android:text="Prêt(e) à commencer ?" android:textStyle="bold" android:textSize="18sp" android:textColor="#137D69" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <com.example.fitcoach.ExerciseIllustration android:id="@+id/illustration" android:layout_width="match_parent" android:layout_height="190dp" android:layout_marginTop="8dp" />
+        <TextView android:id="@+id/instructionText" android:text="Les consignes et le dessin de mouvement s'affichent ici." android:textSize="15sp" android:textColor="#24433E" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/timerText" android:text="00:30" android:textSize="34sp" android:textStyle="bold" android:textColor="#12302D" android:gravity="center" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="8dp">
+            <Button android:id="@+id/startButton" android:text="Démarrer" android:textAllCaps="false" android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:backgroundTint="#137D69" />
+            <Button android:id="@+id/nextButton" android:text="Suivant" android:textAllCaps="false" android:layout_width="0dp" android:layout_weight="1" android:layout_height="50dp" android:layout_marginStart="8dp" android:backgroundTint="#315B53" />
+        </LinearLayout>
+        <Button android:id="@+id/stretchButton" android:text="Séance d'étirements à la maison" android:textAllCaps="false" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:backgroundTint="#DDEBE6" android:textColor="#173A35" />
+        <TextView android:text="Prototype v1 • Les exercices sont des exemples. Respecte ta forme, commence léger et arrête en cas de douleur." android:textSize="12sp" android:textColor="#70817D" android:layout_marginTop="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
