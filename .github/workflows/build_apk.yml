@@ -30,7 +30,7 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Installer les composants Android requis
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        run: sdkmanager "platforms;android-35"
 
       - name: Compiler l'APK
         run: gradle --no-daemon assembleDebug
