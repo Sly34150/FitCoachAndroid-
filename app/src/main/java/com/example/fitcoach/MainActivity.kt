@@ -48,6 +48,7 @@ class MainActivity : Activity(), TextToSpeech.OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Toast.makeText(this, "FitCoach démarre", Toast.LENGTH_LONG).show()
         tts = TextToSpeech(this, this)
         val days = findViewById<Spinner>(R.id.daysSpinner)
         val duration = findViewById<Spinner>(R.id.durationSpinner)
